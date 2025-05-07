@@ -25,10 +25,10 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           {/* Categorías centradas con navegación */}
           <Nav className="mx-auto">
-            <Nav.Link as={NavLink} to="/category/electronica">Electrónica</Nav.Link>
-            <Nav.Link as={NavLink} to="/category/ropa">Ropa</Nav.Link>
-            <Nav.Link as={NavLink} to="/category/hogar">Hogar</Nav.Link>
-            <Nav.Link as={NavLink} to="/category/deportes">Deportes</Nav.Link>
+            <NavLink className="nav-link" to={`/category/electronica`}>Electrónica</NavLink>
+            <NavLink className="nav-link" to={`/category/ropa`}>Ropa</NavLink>
+            <NavLink className="nav-link" to={`/category/hogar`}>Hogar</NavLink>
+            <NavLink className="nav-link" to={`/category/deportes`}>Deportes</NavLink>
           </Nav>
           
           {/* Campo de búsqueda */}

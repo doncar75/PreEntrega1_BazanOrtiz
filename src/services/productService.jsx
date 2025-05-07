@@ -79,23 +79,44 @@ const products = [
     }
   ];
   
-  // Simulación de delay de red
-  const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-  
-  // Obtener todos los productos
-  export const getProducts = async () => {
-    await delay(800); // Simulamos un tiempo de carga
+  // Simulación de delay
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+// Función para obtener todos los productos
+export const getProducts = async () => {
+  try {
+    await delay(500);
+    console.log("getProducts: Devolviendo todos los productos:", products.length);
     return [...products];
-  };
+  } catch (error) {
+    console.error("Error en getProducts:", error);
+    return [];
+  }
+};
+
+// Función para obtener productos por categoría
+export const getProductsByCategory = async (categoryId) => {
+  if (!categoryId) {
+    console.error("getProductsByCategory: categoryId es undefined o null");
+    return [];
+  }
   
-  // Obtener productos por categoría
-  export const getProductsByCategory = async (categoryId) => {
-    await delay(800);
-    return products.filter(product => product.category === categoryId);
-  };
-  
-  // Obtener un producto por su ID
-  export const getProductById = async (id) => {
-    await delay(800);
-    return products.find(product => product.id === id) || null;
-  };
+  try {
+    await delay(500);
+    
+    // Convertir a minúsculas para comparación no sensible a mayúsculas/minúsculas
+    const categoryIdLower = categoryId.toLowerCase();
+    
+    // Filtrar productos por categoría
+    const filtered = products.filter(
+      product => product.category.toLowerCase() === categoryIdLower
+    );
+    
+    console.log(`getProductsByCategory: Categoría "${categoryId}" - Encontrados ${filtered.length} productos`);
+    
+    return filtered;
+  } catch (error) {
+    console.error(`Error en getProductsByCategory para "${categoryId}":`, error);
+    return [];
+  }
+};
