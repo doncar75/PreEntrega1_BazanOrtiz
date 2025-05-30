@@ -184,9 +184,9 @@ const Cart = () => {
                   </div>
 
                   <div className="d-grid gap-2">
-                    <Button variant="success" size="lg">
+                  <Link to="/checkout" className="btn btn-success btn-lg text-decoration-none">
                       Proceder al Checkout
-                    </Button>
+                  </Link>
                     <Link to="/" className="btn btn-outline-primary">
                       Seguir comprando
                     </Link>
