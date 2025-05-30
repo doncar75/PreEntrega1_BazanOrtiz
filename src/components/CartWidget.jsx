@@ -2,7 +2,7 @@ import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { useCart } from './CartContext'; 
 
 const CartWidget = () => {
   const { getTotalQuantity } = useCart();

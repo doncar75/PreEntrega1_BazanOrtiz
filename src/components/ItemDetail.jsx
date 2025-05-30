@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
-import { useCart } from '../context/CartContext';
+import { useCart } from './CartContext';
 
 const ItemDetail = ({ product }) => {
   const { addItem, getItemQuantity } = useCart();
