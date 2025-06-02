@@ -1,4 +1,3 @@
-// src/services/productService.js
 import { 
   collection, 
   addDoc, 
@@ -121,7 +120,6 @@ export const getProductsByCategory = async (category) => {
 // Buscar productos por nombre
 export const searchProducts = async (searchTerm) => {
   try {
-    // Nota: Para búsquedas más complejas, considera usar Algolia o similar
     const querySnapshot = await getDocs(collection(db, COLLECTION_NAME));
     const products = [];
     querySnapshot.forEach((doc) => {

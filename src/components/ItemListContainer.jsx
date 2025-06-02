@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
-import { getProducts, getProductsByCategory } from '../services/productService';
+import { getAllProducts, getProductsByCategory } from '../services/productService';
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
@@ -16,7 +16,7 @@ const ItemListContainer = ({ greeting }) => {
       try {
         let result;
         if (categoryId) {
-          result = await getProductsByCategory(categoryId);
+          result = await getAllProductsByCategory(categoryId);
         } else {
           result = await getProducts();
         }
